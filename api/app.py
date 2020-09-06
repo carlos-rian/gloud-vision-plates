@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from flask import Flask, request, jsonify, Response
+from flask import Flask, request, jsonify, render_template
 from api.authorize import check_if_plate_have_permission
 from api.get_plate import get_plates
 from api.save_file import save_file
@@ -12,10 +12,8 @@ app = Flask(__name__)
 @app.route("/", methods=["POST", "GET"])
 def receive_image():
     if request.method == "GET":
-        return """<form method="POST" enctype="multipart/form-data" action="/">
-        <input type="file" name="file" multiple="">
-        <input type="submit" value="add">
-        </form>"""
+        # irá retornar uma página html para subir o arquivo.
+        return render_template("formulario.html")
     dir_files = save_file(req=request)
     if not dir_files:
         return (jsonify({"message": "file not found"}), 404, {"Content-Type": "application/json"})
