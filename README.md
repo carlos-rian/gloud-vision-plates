@@ -9,12 +9,8 @@ https://cloud.google.com/vision/docs/libraries?hl=pt-PT
 ```
 https://console.cloud.google.com/apis/library/vision.googleapis.com
 ```
-3 - ative o projeto para que possa usar o cloud vision.
-```
-https://console.cloud.google.com/apis/library/vision.googleapis.com
-```
 
-4 - setar variavel de ambiente automaticamente. Altere o arquivo .env, coloque o caminho da chave que você criou.
+3 - setar variavel de ambiente automaticamente. Altere o arquivo .env, coloque o caminho da chave que você criou.
 ```
 GOOGLE_APPLICATION_CREDENTIALS="coloque o caminho da sua chave aqui"
 ```
